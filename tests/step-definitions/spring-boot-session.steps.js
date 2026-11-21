@@ -164,9 +164,13 @@ async function submitLogin(world, login, password, { checkbox = null } = {}) {
   const after = await cookieNamed(world, sessionCookieName(world));
   world.__sessionAtLogin = { before: before ? before.value : null, after: after ? after.value : null };
   if (!(await onLoginPage(world))) {
-    // An error page is no login: a refused CSRF token (403) answers the form of a session that ended.
-    const status = await documentStatus(world);
-    if (status !== null && status >= 400) return { error: `the login form was answered with HTTP ${status} (${await describePage(world)})` };
+    // Still on the login path without its form: the app answered the form itself with an error page (a refused CSRF
+    // token, 403, for the form of a session that ended). A login that worked has left the login path, whatever the
+    // status of the page it went to (a new app answers its home page with the default 404 page).
+    if (isOnPath(world, loginPath(world))) {
+      const status = await documentStatus(world);
+      return { error: `the login form was answered with HTTP ${status === null ? '(status unknown)' : status} (${await describePage(world)})` };
+    }
     return { error: '' };
   }
   const messages = await loginPageMessages(world);
