@@ -193,7 +193,7 @@ report it wrote:
 ```
 3 scenarios (3 passed)
 11 steps (11 passed)
-0m05.000s (executing steps: 0m04.900s)
+0m05.676s (executing steps: 0m05.643s)
 [webship-js] HTML report → …/spring-boot-tests/tests/reports/cucumber_report.html
 ```
 
