@@ -40,7 +40,7 @@ and pull request, then the assertions that must fail; see [The test apps](#the-t
 
 ## From nothing to a green run
 
-What the machine needs: Docker, [DDEV](https://ddev.com), git, Python 3, and Node.js 20 or later with npm. The app
+What the machine needs: Docker, [DDEV](https://ddev.com), git, Python 3, and Node.js 24 or later with npm. The app
 is built and runs in its container, on the current long-term-support JDK: no Java on the machine, no public domain
 and no account anywhere. The app needs about 500 MB of memory once it runs.
 
@@ -249,7 +249,7 @@ out?").
 
 ## Requirements
 
-- Node.js 20 or later
+- Node.js 24 or later
 - A webship-js 2.0 test project (webship-js 2.0.16 or later)
 - A Spring Boot app (4.x; the steps hold on 4.1 and 4.2) with Spring Security 7 for the login steps, and accounts
   for the suite
