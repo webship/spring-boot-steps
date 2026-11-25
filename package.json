@@ -1,6 +1,6 @@
 {
   "name": "@webship-js/spring-boot-steps",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Cucumber step definitions for what Spring Boot and Spring Security give every app, a plugin for webship-js (Playwright and Cucumber): the generated login and logout pages and their refusals, remember-me and a session that ended, the redirect to the login page and back, the access-denied answer of a role rule, a CSRF refusal, the default error page and an app's own error page, the health endpoint and the details it shows by role, and the validation messages and flash messages of server-rendered forms.",
   "main": "tests/step-definitions/spring-boot-session.steps.js",
   "files": [
